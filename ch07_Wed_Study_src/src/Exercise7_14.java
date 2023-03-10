@@ -22,6 +22,6 @@ class SutdaCard3 {
 
 class Exercise7_14 {
 	public static void main(String args[]) {
-		SutdaCard card = new SutdaCard(1, true);
+		SutdaCard3 card = new SutdaCard3(1, true);
 	}
 }

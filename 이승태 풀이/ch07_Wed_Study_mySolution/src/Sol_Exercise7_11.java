@@ -12,6 +12,7 @@ class MyTv3 {
 	private boolean isPowerOn;
 	private int channel;
 	private int volume;
+	private int prevChannel; //🔥변수 '이전 채널' 저장. 채널을 바꾸는 메서드마다 이전채널 기록.
 
 	final int MAX_VOLUME = 100;
 	final int MIN_VOLUME = 0;
@@ -37,6 +38,7 @@ class MyTv3 {
 	
 	public void setChannel(int channel) {
 		if(channel<MIN_CHANNEL||channel>MAX_CHANNEL) return;
+		this.prevChannel = this.channel; //🔥 이전채널에 현재 채널 기록
 		this.channel = channel;
 	}
 	
@@ -47,6 +49,9 @@ class MyTv3 {
 	/*
 	 * (2) 문제7-10의 MyTv2클래스에 gotoPrevChannel메서드를 추가하여 완성하시오.
 	 */
+	void gotoPrevChannel() {	//🔥 이전채널 변경
+		setChannel(prevChannel);
+	}
 }
 
 class Sol_Exercise7_11 {
