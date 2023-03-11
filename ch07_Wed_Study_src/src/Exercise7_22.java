@@ -8,15 +8,14 @@
 //
 //(2)	클래스명	: Rectangle
 //조상클래스 : Shape
-// 
-//멤버변수
-// 
-//: double width - 폭 double height - 높이
+//멤버변수: double width - 폭 double height - 높이
 // 
 //메서드	:
 //1.	메서드명 : isSquare
-//기	능 : 정사각형인지 아닌지를 알려준다. 반환타입 : boolean
+//기	능 : 정사각형인지 아닌지를 알려준다. 
+//반환타입 : boolean
 //매개변수 : 없음
+
 
 abstract class Shape {
 	Point p;
@@ -29,9 +28,8 @@ abstract class Shape {
 		this.p = p;
 	}
 
-	abstract double calcArea();
-
-// 도형의 면적을 계산해서 반환하는 메서드
+	abstract double calcArea(); // 도형의 면적을 계산해서 반환하는 메서드
+	
 	Point getPosition() {
 		return p;
 	}

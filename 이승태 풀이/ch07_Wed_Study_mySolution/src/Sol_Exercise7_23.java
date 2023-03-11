@@ -3,7 +3,7 @@
 //1.	메서드명 : sumArea
 //기	능 : 주어진 배열에 담긴 도형들의 넓이를 모두 더해서 반환한다. 
 //반환타입 : double
-//매개변수 : Shape1[] arr
+//매개변수 : Shape[] arr
 
 //class Exercise7_23
 //{
@@ -22,6 +22,14 @@
 
 class Sol_Exercise7_23 {
 	/*(1) sumArea메서드를 작성하시오.*/
+	static double sumArea(Shape1[] arr) {
+		double result = 0;
+		for(int i=0; i<arr.length; i++) {
+			 result += arr[i].calcArea();
+		}
+		
+		return result;
+	}
 	
 	public static void main(String[] args) {
 		Shape1[] arr = {new Circle1(5.0), new Rect(3,4), new Circle1(1)}; 

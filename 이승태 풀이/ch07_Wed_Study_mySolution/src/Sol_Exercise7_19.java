@@ -44,11 +44,14 @@ class Buyer {
 		 * (1) 아래의 로직에 맞게 코드를 작성하시오. 1.1 가진 돈과 물건의 가격을 비교해서 가진 돈이 적으면 메서드를 종료한다. 1.2 가진
 		 * 돈이 충분하면, 제품의 가격을 가진 돈에서 빼고 1.3 장바구니에 구입한 물건을 담는다.(add메서드 호출)
 		 */
-		if(p.price>this.money) return;
-		else {
+		if(p.price>this.money) {
+			System.out.println("잔액이 부족하여 " +p+" 을/를 살 수 없습니다.");
+			return;
+			}
+		else {	//잔액이 충분하면
 			money -= p.price;
 			//3. 장바구니에 구입한 물건을 담는다.
-			add(p);	//🔥 이걸 추가 안했네
+			add(p);	//🔥 카트에 물건 p를 담는다.
 		}
 	}
 
@@ -60,9 +63,10 @@ class Buyer {
 		 */
 		if(i>=cart.length) {
 			Product5[] cart2 = new Product5[cart.length*2];	//Product 배열 cart의 길이보다 2배 길이인 배열 cart2 생성
-			cart2 = Arrays.copyOf(cart, cart.length);	// cart2에 cart의 인덱스 i까지의 요소 담기
-			cart = cart2;	//❓❓이러면 cart가 바꿔지나? 애초에 cart 배열의 크기는 [3]이었는데 참조하는 객체배열의 주소가 바뀌는거니까 바꿔질것같다
-			System.out.println(Arrays.toString(cart));
+			//cart2 = Arrays.copyOf(cart, cart.length);	// cart2에 cart의 인덱스 i까지의 요소 담기 //이러면 다시 배열의 길이가 cart.length가 됨.
+			System.arraycopy(cart, 0, cart2, 0, cart.length);	//✔️✔️
+			cart = cart2;	//❓❓이러면 cart가 바꿔지나? 애초에 cart 배열의 크기는 [3]이었는데 참조하는 객체배열의 주소가 바뀌는거니까 바꿔질것같다. O 바꿔진다.
+			// System.out.println(Arrays.toString(cart)); //(디버깅용)
 		}
 		//🔥if문 안에 들어가면 안돼 현재 넣을 인덱스가 cart.length보다 클 때만 저장하면 nullPointerException이 발생하잖아.
 		cart[i] = p;	// 물건을 장바구니(cart)에 저장한다.
@@ -78,10 +82,11 @@ class Buyer {
 		System.out.println(Arrays.toString(cart));
 		int total = 0;
 		for(int k=0; k<cart.length; k++) {
-			total += cart[i].price;
+			if(cart[k]==null) break;	//✔️✔️ cart[k]==null이면 for문을 빠져나가야함.
+			total += cart[k].price;
 		}
-		System.out.println("물건 구입 총액 : " + total);
-		System.out.println("잔돈 : " + this.money);
+		System.out.println("사용한 금액 : " + total);
+		System.out.println("남은 금액 : " + this.money);
 		
 	} // summary()
 }
