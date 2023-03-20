@@ -1,3 +1,5 @@
+
+
 //[8-7] 아래의 코드가 수행되었을 때의 실행결과를 적으시오.
 class Sol_Exercise8_7 {
     static void method(boolean b) {
