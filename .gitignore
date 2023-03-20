@@ -243,3 +243,6 @@ $RECYCLE.BIN/
 
 # .idea/ 추가
 .idea/
+
+# *.iml 추가
+*.iml
