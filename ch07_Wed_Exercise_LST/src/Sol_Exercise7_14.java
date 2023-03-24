@@ -3,7 +3,7 @@
 //될 수 도 있기 때문이다. 이러한 문제점이 발생하지 않도록 아래의 SutdaCard를 수정하시 오.
 
 class SutdaCard3 {
-	private final int num;	//🔥해당 객체값을 변경하지 못하도록 iv의 접근제어자를 private와 final로 선언
+	private final int NUM;	//🔥해당 객체값을 변경하지 못하도록 iv의 접근제어자를 private와 final로 선언
 	private final boolean isKwang; //🔥 private로 선언하면 외부클래스에서는 접근이 불가능, final로 선언하면 메서드를 통해서도 값 변경 불가능. 
 
 	SutdaCard3() {		//🔥생성자를 통해서는 기존 인스턴스 멤버에 접근 가능하다.
@@ -11,12 +11,12 @@ class SutdaCard3 {
 	}
 
 	SutdaCard3(int num, boolean isKwang) {
-		this.num = num;
+		this.NUM = num;
 		this.isKwang = isKwang;
 	}
 
 	public String toString() {
-		return num + (isKwang ? "K" : "");
+		return NUM + (isKwang ? "K" : "");
 	}
 }
 
