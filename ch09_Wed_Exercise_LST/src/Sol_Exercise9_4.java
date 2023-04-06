@@ -5,7 +5,7 @@
 반환타입 : 없음
 매개변수 : int[] dataArr - 출력할 그래프의 데이터 char ch - 그래프로 출력할 문자.
  */
-class Sol_Exercise9_4 {
+class   Sol_Exercise9_4 {
     static void printGraph(int[] dataArr, char ch) {
     /*
     (1) printGraph메서드를 작성하시오.
