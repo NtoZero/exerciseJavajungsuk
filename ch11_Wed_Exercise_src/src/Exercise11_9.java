@@ -1,5 +1,5 @@
-//[11-9] 문제11-8의 Student클래스에 반등수(classRank)를 저장하기 위한 인스턴스변수
-//        를 추가하였다. 반등수를 계산하고 반과 반등수로 오름차순 정렬하여 결과를 출력하시오.
+//[11-9] 문제11-8의 Student클래스에 반등수(classRank)를 저장하기 위한 인스턴스변수를 추가하였다.
+//        반등수를 계산하고 반과 반등수로 오름차순 정렬하여 결과를 출력하시오.
 //        (1)~(2)에 알맞은 코드를 넣어 완성하시오.
 
 import java.util.*;
@@ -14,12 +14,9 @@ class Student implements Comparable {
 
 
     int total;
-    int schoolRank;
+    int schoolRank; // 전교등수
 
-
-// 전교등수
-
-    int classRank; // 반등수
+    int classRank; //⭐ 반등수
 
     Student(String name, int ban, int no, int kor, int eng, int math) {
         this.name = name;
@@ -71,15 +68,16 @@ class Student implements Comparable {
 
 class ClassTotalComparator implements Comparator {
     public int compare(Object o1, Object o2) {
-/*
-(1)	알맞은 코드를 넣어 완성하시오.
-*/
+    /*
+    (1)	알맞은 코드를 넣어 완성하시오.
+    */
     }
 }
 
 class Exercise11_9 {
     public static void calculateClassRank(List list) {
-// 먼저 반별 총점기준 내림차순으로 정렬한다. Collections.sort(list, new ClassTotalComparator());
+    // 먼저 반별 총점기준 내림차순으로 정렬한다.
+    Collections.sort(list, new ClassTotalComparator());
 
         int prevBan = -1;
         int prevRank = -1;
@@ -99,10 +97,10 @@ class Exercise11_9 {
         1.4	현재 반과 총점과 등수를 이전 반(prevBan),
         이전 총점(prevTotal), 이전 등수(prevRank)에 저장한다.
         */
-            } //public static void calculateClassRank(List list) {
-        public static void calculateSchoolRank(List list) {
-            /* 내용 생략 */
-        }
+    } //public static void calculateClassRank(List list) {
+    public static void calculateSchoolRank(List list) {
+        /* 내용 생략 */
+    }
 
     public static void main(String[] args) {
         ArrayList list = new ArrayList();

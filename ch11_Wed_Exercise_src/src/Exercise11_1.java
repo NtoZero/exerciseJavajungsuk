@@ -1,37 +1,51 @@
-import java.util.ArrayList;
+//[11-11] 다음은 SutdaCard클래스를
+//        HashSet에 저장하고 출력하는 예제이다. HashSet에 중복된 카드가 저장되지 않도록 SutdaCard의 hashCode()를 알맞게 오버라이딩하시오.
+//        [Hint] String클래스의 hashCode()를 사용하라.
 
-// [11-1] 다음은 정수집합 1,2,3,4와 3,4,5,6의 교집합, 차집합, 합집합을 구하는 코드이다.
-// 코드를 완성하여 실행결과와 같은 결과를 출력하시오.
-// [Hint] ArrayList클래스의 addAll(), removeAll(), retainAll()을 사용하라.
-public class Exercise11_1 {
-    public static void main(String[] args) {
-        ArrayList list1 = new ArrayList();
-        ArrayList list2 = new ArrayList();
-        ArrayList kyo = new ArrayList();    //교집합
-        ArrayList cha = new ArrayList();    //차집합
-        ArrayList hap = new ArrayList();    //합집합
+import java.util.*;
 
-        list1.add(1);
-        list1.add(2);
-        list1.add(3);
-        list1.add(4);
+class SutdaCard {
+    int num;
+    boolean isKwang;
 
-        list2.add(3);
-        list2.add(4);
-        list2.add(5);
-        list2.add(6);
+    SutdaCard() {
+        this(1, true);
+    }
 
-        /*
-            (1) 알맞은 코드를 넣어 완성하시오.
-         */
+    SutdaCard(int num, boolean isKwang) {
+        this.num = num;
+        this.isKwang = isKwang;
+    }
 
-        System.out.println("list1="+list1);
-        System.out.println("list2="+list2);
-        System.out.println("kyo="+kyo);
-        System.out.println("cha="+cha);
-        System.out.println("hap="+hap);
+    public boolean equals(Object obj) {
+        if (obj instanceof SutdaCard) {
+            SutdaCard c = (SutdaCard) obj;
+            return num == c.num && isKwang == c.isKwang;
+        } else {
+            return false;
+        }
+    }
+
+    public String toString() {
+        return num + (isKwang ? "K" : "");
     }
 }
+
+class Exercise11_11 {
+    public static void main(String[] args) {
+        SutdaCard c1 = new SutdaCard(3, true);
+        SutdaCard c2 = new SutdaCard(3, true);
+        SutdaCard c3 = new SutdaCard(1, true);
+
+        HashSet set = new HashSet();
+        set.add(c1);
+        set.add(c2);
+        set.add(c3);
+
+        System.out.println(set);
+    }
+}
+
 
 /*
 <실행결과>

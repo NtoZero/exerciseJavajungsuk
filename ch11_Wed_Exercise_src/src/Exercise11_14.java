@@ -1,7 +1,6 @@
 //[11-14] 다음은 성적처리 프로그램의 일부이다.
 // Scanner클래스를 이용해서 화면으로부터 데이터를 입력하고 보여주는 기능을 완성하시오.
 
-import java.io.*;
 import java.util.*;
 
 class Exercise11_14 {
@@ -30,7 +29,8 @@ class Exercise11_14 {
 
         System.out.println("*             성적 관리 프로그램                  *");
 
-                System.out.println("**************************************************"); System.out.println();
+        System.out.println("**************************************************");
+        System.out.println();
         System.out.println(" 1. 학생성적 입력하기 ");
         System.out.println();
         System.out.println(" 2. 학생성적 보기");
@@ -132,8 +132,8 @@ class Student implements Comparable {
     }
 
     public int compareTo(Object o) {
-        if (o instanceof Student) {
-            Student tmp = (Student) o;
+        if (o instanceof Student9) {
+            Student9 tmp = (Student9) o;
 
             return tmp.total - this.total;
         } else {
