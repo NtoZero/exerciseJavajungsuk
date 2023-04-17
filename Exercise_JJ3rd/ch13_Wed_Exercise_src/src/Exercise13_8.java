@@ -23,7 +23,9 @@ class Exercise13_8 {
             String prompt = ">>";
             System.out.print(prompt);
 
-// 화면으로부터   라인단위로   입력받는다. Scanner s = new Scanner(System.in); String input = s.nextLine().trim();
+        // 화면으로부터   라인단위로   입력받는다.
+            Scanner s = new Scanner(System.in);
+            String input = s.nextLine().trim();
             int index = words.indexOf(input);
             if (index != -1) {
                 words.remove(index);
@@ -38,6 +40,8 @@ class Exercise13_8 {
         1.	interval(2초)마다 배열 data의 값 중 하나를 임의로 선택해서
         2.	words에 저장한다.
         */
+
+
         } // end of run()
     } // class WordGenerator
 } // Exercise13_9
